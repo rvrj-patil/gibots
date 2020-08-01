@@ -38,12 +38,12 @@ dbo.collection("customers").find({ gender:"male",$and: [ { "dob.age": { $gt: 0, 
     db.close();
   });
   dbo.collection("customers").find({ gender:"female",$and: [ { "dob.age": { $gt: 30, $lt: 50 }}]}).count(function(err, result) {
-    if (err) throw err;
+    if (err) throw err; 
     console.log("0-50:",result)
     db.close();
   });
   dbo.collection("customers").find({ $and: [ { "dob.age": { $gt: 50 }}]}).count(function(err, result) {
-    if (err) throw err; 
+    if (err) throw err;
     console.log("50-above:",result)
     db.close();
   });
